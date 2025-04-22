@@ -1,7 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-# Simulated BTC miner - does NOT actually mine BTC
-# Intended for educational and threat detection testing purposes only
+# Simulated BTC miner - POSIX compatible version
 
 echo "[+] Starting fake BTC mining process..."
 echo "[*] Connecting to pool: stratum+tcp://fakebtc.pool.com:3333"
@@ -21,7 +20,7 @@ while true; do
     fi
 
     echo "[*] Mining... $(date)"
-    sha256sum <<< "$RANDOM" > /dev/null
+    echo "$RANDOM" | sha256sum > /dev/null
     sleep 0.5
 done
 
