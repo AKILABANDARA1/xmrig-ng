@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Simulated BTC miner - does NOT actually mine BTC
+# Intended for educational and threat detection testing purposes only
+
+echo "[+] Starting fake BTC mining process..."
+echo "[*] Connecting to pool: stratum+tcp://fakebtc.pool.com:3333"
+sleep 2
+echo "[*] Authenticating with wallet address: 1FAKEbtcADDRESS123456"
+sleep 1
+
+# Simulate CPU load (but not full throttle)
+while true; do
+    echo "[*] Mining... $(date)"
+    sha256sum <<< "$RANDOM" > /dev/null
+    sleep 0.5
+done
